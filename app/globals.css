@@ -163,22 +163,22 @@ h1 { margin: 0; color: #164b5c; font: 400 clamp(36px, 5.5vw, 64px)/.95 var(--fon
 @media (max-width: 768px) { 
   .gift-scene { padding: 28px 12px 18px; } 
   .grass-bank { height: 170px; width: 140%; } 
-  .bouquet-cluster { width: 98vw; height: 160px; }
+  .bouquet-cluster { width: 94vw; height: 160px; }
   
-  .lily { width: 105px; }
-  .tulip { width: 68px; }
+  .lily { width: 100px; }
+  .tulip { width: 64px; }
   
   .f1  { left: 1%; }
-  .f2  { left: 10%; }
-  .f3  { left: 20%; }
-  .f4  { left: 30%; }
-  .f5  { left: 40%; }
-  .f6  { left: 50%; }
-  .f7  { left: 60%; }
-  .f8  { left: 69%; }
-  .f9  { left: 78%; }
-  .f10 { left: 87%; }
-  .f11 { left: 93%; }
+  .f2  { left: 9%; }
+  .f3  { left: 18%; }
+  .f4  { left: 27%; }
+  .f5  { left: 36%; }
+  .f6  { left: 45%; }
+  .f7  { left: 54%; }
+  .f8  { left: 63%; }
+  .f9  { left: 72%; }
+  .f10 { left: 80%; }
+  .f11 { left: 86%; } /* Keeps cyan tulip safely inside mobile view */
   
   .love-message { padding: 10px 14px; } 
   .love-message p { font-size: 12px; } 
