@@ -1,0 +1,184 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #11141b;
+  --foreground: #f4eef5;
+  --border: rgba(255,255,255,.14);
+  --ring: #a981aa;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--background); color: var(--foreground); }
+button { font: inherit; }
+
+.gift-scene { min-height: 100svh; overflow: hidden; position: relative; display: flex; flex-direction: column; align-items: center; padding: 44px 20px 24px; background: linear-gradient(180deg, #78c9ee 0%, #bce8f7 52%, #e5f5d4 100%); isolation: isolate; transition: background 2.5s ease; }
+.gift-scene::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(255,255,255,.08), transparent 50%, rgba(62,133,67,.2)); pointer-events: none; }
+.sky-glow { position: absolute; z-index: -1; width: 48vw; height: 48vw; min-width: 380px; min-height: 380px; top: 25%; left: 50%; transform: translate(-50%,-50%); border-radius: 50%; background: rgba(255, 246, 190, .23); filter: blur(70px); }
+.cloud { position: absolute; z-index: -1; height: 44px; width: 180px; border-radius: 999px; background: rgba(255,255,255,.72); filter: blur(1px); animation: cloud-drift 22s linear infinite; }
+.cloud::before, .cloud::after { content: ''; position: absolute; bottom: 12px; border-radius: 50%; background: inherit; }
+.cloud::before { left: 28px; width: 70px; height: 70px; }
+.cloud::after { right: 24px; width: 54px; height: 54px; }
+.cloud-one { top: 15%; left: 5%; }
+.cloud-two { top: 26%; right: 4%; transform: scale(.72); animation-delay: -10s; }
+
+.grass-bank { 
+  position: absolute; 
+  z-index: 1; 
+  bottom: 0; 
+  width: 120%; 
+  height: 220px; 
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0; 
+  background: radial-gradient(ellipse at 50% 0%, #a9ce78 0%, #78ad5d 42%, #467c4a 100%); 
+  box-shadow: 0 -16px 30px rgba(63,117,54,.2); 
+}
+
+.meadow-stage { 
+  justify-content: flex-end !important; 
+  padding-bottom: 20px; 
+}
+
+.grass-blades { position: absolute; z-index: 5; bottom: 15px; width: 100%; height: 90px; pointer-events: none; }
+.grass-blades span { position: absolute; bottom: 0; left: calc((var(--i) * 29) % 100 * 1%); width: 3px; height: calc(25px + (var(--i) % 5) * 10px); border-radius: 100% 0; background: #3d7547; transform: rotate(calc(-28deg + (var(--i) % 7) * 9deg)); transform-origin: bottom; animation: grass-sway 2.8s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -.12s); }
+
+@keyframes cloud-drift { from { margin-left: -2vw; } to { margin-left: 9vw; } }
+@keyframes grass-sway { to { transform: rotate(calc(-18deg + (var(--i) % 7) * 9deg)); } }
+
+.gift-header { text-align: center; z-index: 2; }
+.eyebrow { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0 0 8px; color: #356b73; font: 500 11px/1.4 var(--font-sans); letter-spacing: .2em; text-transform: uppercase; }
+h1 { margin: 0; color: #164b5c; font: 400 clamp(36px, 5.5vw, 64px)/.95 var(--font-serif); letter-spacing: -.035em; }
+.subtitle { margin: 8px 0 0; color: #356b73; font: 400 13.5px/1.4 var(--font-sans); letter-spacing: .04em; }
+
+/* Message Container Positioned Above Flowers */
+.message-container {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0 4px;
+  z-index: 10;
+}
+
+.pick-prompt { margin: 0; color: #245b62; font: 500 13.5px/1.4 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; }
+
+.love-message { 
+  width: min(92vw, 480px); 
+  padding: 12px 16px; 
+  border: 1px solid rgba(255,255,255,.5); 
+  border-radius: 16px; 
+  background: rgba(255,255,255,.65); 
+  color: #225768; 
+  box-shadow: 0 10px 30px rgba(39,103,91,.15); 
+  backdrop-filter: blur(10px); 
+  text-align: center; 
+}
+
+.love-message p { margin: 0; font: 500 13px/1.5 var(--font-sans); }
+.love-message .message-kicker { margin-bottom: 2px; color: #b44e68; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+
+.rose-stage { display: flex; flex: 1; min-height: 280px; width: 100%; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
+
+/* Natural Garden Cluster Layout */
+.bouquet-cluster { 
+  position: relative; 
+  width: min(92vw, 760px); 
+  height: 180px; 
+  margin: 0 auto;
+  z-index: 4;
+}
+
+.flower-svg { 
+  position: absolute; 
+  bottom: 0; 
+  height: auto; 
+  overflow: visible; 
+  filter: drop-shadow(0 12px 14px rgba(38,82,48,.3)); 
+  transform-origin: 50% 100%; 
+  cursor: pointer; 
+  touch-action: manipulation; 
+  -webkit-tap-highlight-color: transparent; 
+  outline: none; 
+}
+
+.lily { width: 125px; }
+.tulip { width: 100px; }
+
+.f-back { z-index: 1; opacity: 0.85; filter: drop-shadow(0 8px 10px rgba(38,82,48,.2)) brightness(0.92); }
+.f-mid { z-index: 2; }
+.f-front { z-index: 3; }
+
+.f1  { left: 1%;  transform: rotate(-12deg) scale(0.85); }
+.f2  { left: 8%; transform: rotate(-7deg) scale(0.9); }
+.f3  { left: 20%; transform: rotate(-4deg) scale(1); }
+.f4  { left: 30%; transform: rotate(-1deg) scale(0.95); }
+.f5  { left: 40%; transform: rotate(2deg) scale(1.05); }
+.f6  { left: 50%; transform: rotate(0deg) scale(1.1); }
+.f7  { left: 60%; transform: rotate(3deg) scale(1); }
+.f8  { left: 70%; transform: rotate(6deg) scale(1.05); }
+.f9  { left: 77%; transform: rotate(9deg) scale(0.9); }
+.f10 { left: 90%; transform: rotate(12deg) scale(0.95); }
+.f11 { left: 96%; transform: rotate(15deg) scale(0.88); }
+
+.bloom-caption { margin: 6px 0 0; color: #736f78; font: italic 12.5px/1.4 var(--font-serif); letter-spacing: .08em; z-index: 6; text-align: center; }
+
+.replay-button { 
+  position: absolute; 
+  bottom: 16px; 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  border: 0; 
+  background: rgba(255,255,255,0.75); 
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: #245b62; 
+  cursor: pointer; 
+  font: 500 11px/1.4 var(--font-sans); 
+  letter-spacing: .08em; 
+  text-transform: uppercase; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all .1s ease; 
+  z-index: 10;
+}
+
+.replay-button:hover { background: rgba(255,255,255,0.95); color: #164b5c; }
+
+@media (max-width: 768px) { 
+  .gift-scene { padding: 28px 12px 18px; } 
+  .grass-bank { height: 170px; width: 140%; } 
+  .bouquet-cluster { width: 95vw; height: 150px; }
+  .lily { width: 95px; }
+  .tulip { width: 75px; }
+  .f1  { left: 0%; }
+  .f2  { left: 9%; }
+  .f3  { left: 19%; }
+  .f4  { left: 29%; }
+  .f5  { left: 39%; }
+  .f6  { left: 48%; }
+  .f7  { left: 58%; }
+  .f8  { left: 68%; }
+  .f9  { left: 77%; }
+  .f10 { left: 84%; }
+  .f11 { left: 92%; }
+  .love-message { padding: 10px 14px; } 
+  .love-message p { font-size: 12px; } 
+  .replay-button { bottom: 10px; } 
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } 
+}
