@@ -5,17 +5,17 @@ import { RotateCcw, Sparkles } from 'lucide-react'
 import { useState } from 'react'
 
 const flowerNotes = [
-  { type: 'lily', color: 'pink', label: 'First Lily', text: 'MOON 🌙, I am sorry for shouting and your presence matters more than being right or wrong' },
-  { type: 'tulip', color: '#fb8500', label: 'Orange Tulip', text: 'If you get hurt i get hurt too, call me whenever you need me i will be there for you.' },
-  { type: 'lily', color: 'pink', label: 'Second Lily', text: 'I dont care if i am right or wrong, The only right thing is that i need you and i promise to never hurt you again.' },
-  { type: 'tulip', color: '#ffb703', label: 'Yellow Tulip', text: 'Baby we have that love in us that other people would die for, If god exists by any chance he made our bond by his own hands becuase he wanted to witness something real.' },
-  { type: 'tulip', color: '#e63946', label: 'Red Tulip', text: ' If the concept of multiverse exists, then our love is a thread in its fabric.' },
-  { type: 'lily', color: 'pink', label: 'Third Lily', text: 'Dont give up on us. We will grow together.' },
-  { type: 'tulip', color: '#9d4edd', label: 'Purple Tulip', text: 'I get angry sometimes, but I want you to know that it doesn\'t change how much I care about you.' },
-  { type: 'tulip', color: '#ff006e', label: 'Magenta Tulip', text: ' Whatever i said i know you felt bad but i want you to know that i love you and i am sorry.' },
-  { type: 'lily', color: 'pink', label: 'Fourth Lily', text: 'You are special to me you are my wife.' },
-  { type: 'tulip', color: '#3a86ff', label: 'Blue Tulip', text: 'Lets fight for our love, i will not let it go this easy.' },
-  { type: 'tulip', color: '#4cc9f0', label: 'Cyan Tulip', text: 'I poured my heart into this message, hoping it conveys just how much you mean to me.' },
+  { type: 'lily', color: 'pink', label: 'First Lily', text: 'Hello, cutie i know you are angry to touch the flowers next to me. Oh you are not?? Touch it' },
+  { type: 'tulip', color: '#fb8500', label: 'Orange Tulip', text: 'Am soo sorryy for being rude at times due to things i cant explain but the next flower knows one thing.. ' },
+  { type: 'lily', color: 'pink', label: 'Second Lily', text: 'That, i love you the mosttt. And the next knows' },
+  { type: 'tulip', color: '#ffb703', label: 'Yellow Tulip', text: 'How much i miss you everyday.. ' },
+  { type: 'tulip', color: '#e63946', label: 'Red Tulip', text: ' Ik you expect me outside when you get put of that office door.. but' },
+  { type: 'lily', color: 'pink', label: 'Third Lily', text: 'I am trying my level best to meet you jaan.. ' },
+  { type: 'tulip', color: '#9d4edd', label: 'Purple Tulip', text: 'Please raag korona..' },
+  { type: 'tulip', color: '#ff006e', label: 'Magenta Tulip', text: 'I will be thereeeee forever!! ' },
+  { type: 'lily', color: 'pink', label: 'Fourth Lily', text: 'I' },
+  { type: 'tulip', color: '#3a86ff', label: 'Blue Tulip', text: ' Love ' },
+  { type: 'tulip', color: '#4cc9f0', label: 'Cyan Tulip', text: 'Youuuu!! ;)' },
 ]
 
 function Lily({ reduced, delay = 0, className = '', onPick }: { reduced: boolean; delay?: number; className?: string; onPick: () => void }) {
@@ -116,7 +116,7 @@ export default function Page() {
       
       <header className="gift-header">
         <p className="eyebrow"><Sparkles size={14} strokeWidth={1.5} /> A little something for you</p>
-        <h1>For MOON 🌙</h1>
+        <h1>For Kiana 🌙</h1>
         <p className="subtitle">A lush meadow, growing with our bond</p>
       </header>
 
